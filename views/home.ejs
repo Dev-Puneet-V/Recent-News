@@ -1,0 +1,16 @@
+<div id="news">
+    <% if ( type == "country"  ||  type == "tech" ) { %>
+        <% data.articles.forEach(function(i) { %>
+            <% if ( i.title != null && i.description != null && i.urlToImage != null) { %>
+                <div class="card" style="width: 100%;">
+                    <img class="card-img-top" src="<%= i.urlToImage %>" alt="Card image cap">
+                    <div class="card-body">
+                    <h5 class="card-title"><%= i.title %></h5>
+                    <p class="card-text"><%= i.description; %></p>
+                    <a href="<%= i.url %>" class="btn btn-primary">More info</a>
+                    </div>
+                </div>
+            <% } %>
+        <% }) %>
+    <% } %>
+</div>

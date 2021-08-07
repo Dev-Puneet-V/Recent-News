@@ -1,0 +1,11 @@
+<div id="choices">
+    <% for(choice of choices){ %>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><%= choice.title %></h5>
+                <p class="card-text"><%= choice.about %></p>
+                <a href="#" class="btn btn-primary"><%= choice.key_name %></a>
+            </div>
+        </div>
+    <% } %>
+</div>

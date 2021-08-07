@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">NEWS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <% if ( locals.user ) { %>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">NearBy-News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tech/news">Tech-News</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Share-Market
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Location</a>
+            <a class="dropdown-item" href="#">Mixed</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Country
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/country/india">India</a>
+            <a class="dropdown-item" href="/country/usa">Usa</a>
+            <a class="dropdown-item" href="/country/germany">Germany</a>
+            <a class="dropdown-item" href="/country/uk">United Kingdom</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/others">Others</a>
+        </li>
+      </ul>
+        <button type="button" class="btn btn-warning" style="margin : 3px;"><a href="/users/sign-out" style="text-decoration: none;">SIGN OUT</a></button>
+        <button type="button" class="btn btn-warning" style="margin : 3px;"><a href="/users/profile/<%= locals.user._id %>" style="text-decoration: none;">PROFILE</a></button>
+      <% } else { %>
+        <button type="button" class="btn btn-warning" style="margin : 3px;"><a href="/users/signIn" style="text-decoration: none;">SIGN IN</a></button>
+        <button type="button" class="btn btn-warning" style="margin : 3px;"><a href="/users/signUp" style="text-decoration: none;">SIGN UP</a></button>
+      <% } %>
+
+    </div>
+  </nav>
